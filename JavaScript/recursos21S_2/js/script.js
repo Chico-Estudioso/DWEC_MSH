@@ -13,7 +13,7 @@ let puntos = 0;
 
 function inicio() {
     console.log("Entro a inicio");
-    let campo = document.createElement("fieldset")
+    let campo = document.createElement("fieldset");
     //Incorpora al nuevo componente creado el estilo de clase .container en el css
     campo.className = "container";
     let leyenda = document.createElement("legend");
@@ -32,7 +32,7 @@ function inicio() {
         contenedorFlex.appendChild(divs);
     }
     campo.appendChild(contenedorFlex);
-    btnJugar.onclick = Jugar;
+    btnJugar.onclick = Jugar();
 
     function Jugar() {
         console.log("Entro en jugar");

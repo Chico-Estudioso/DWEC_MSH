@@ -1,6 +1,6 @@
 window.addEventListener("load", inicio);
-let contenedorPrincipal = document.getElementById("cajaImg");
-let btnComenzar = document.getElementById("cargarImg");
+let contenedorPrincipal = document.getElementById("cajaImagenes");
+let btnComenzar = document.getElementById("mostrarJS");
 let rutaImgH;
 let rutaImgM;
 rutaImgH = "https://randomuser.me/api/portraits/men/";
@@ -16,17 +16,17 @@ function inicio() {
     caja.appendChild(leyenda);
     let contenedorFlex = document.createElement("div");
     contenedorFlex.className = "gallery";
-    btnComenzar.onclick = CargarImgs();
+    btnComenzar.onclick = CargarImgs;
     for (let i = 0; i < 20; i++) {
         let num1 = Math.round(Math.random() * 30);
         let imgs = document.createElement("img");
-        imgs.className("gallery img");
-        let srcImg = document.createAttribute("src");
-        imgs.appendChild(srcImg);
+        imgs.className = "gallery img";
+        // let srcImg = document.createAttribute("src");
+        //  imgs.appendChild(srcImg);
         if (num1 % 2 == 0) {
-            srcImg = rutaImgH + num1 + ".jpg";
+            imgs.src = rutaImgH + num1 + ".jpg";
         } else {
-            srcImg = rutaImgM + num1 + ".jpg";
+            imgs.src = rutaImgM + num1 + ".jpg";
         }
         contenedorFlex.appendChild(imgs);
     }
@@ -35,6 +35,3 @@ function inicio() {
 
 function CargarImgs() {
     let arrayImagenes = document.getElementsByClassName("gallery img");
-
-
-}

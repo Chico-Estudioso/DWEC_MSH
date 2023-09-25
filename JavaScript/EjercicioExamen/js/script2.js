@@ -12,11 +12,21 @@ function inicio() {
     texto.textContent = "Práctica 8";
     contenedorS.appendChild(texto);
     contenedorP.appendChild(contenedorS);
+
+    refrescar();
     var segundos = 30;
-    var temporizador = setInterval(refrescar, 1000);
+    var temporizador = setInterval(refrescar, 10000);
 
-    function refrescar{
+    function refrescar() {
 
+        //contenedorS.innerHTML = "";
+        let arrayImg = document.querySelectorAll("img");
+        console.log(arrayImg);
+        arrayImg.forEach(function (item, indice) {
+            contenedorS.removeChild(item);
+        }
+        )
+            ;
         var contadorBordes = 0;
         for (let i = 0; i < 20; i++) {
             let num1 = Math.floor(Math.random() * 20);

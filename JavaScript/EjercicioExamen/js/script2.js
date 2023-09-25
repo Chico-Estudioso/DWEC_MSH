@@ -86,11 +86,5 @@ function inicio() {
                 }
             }
         }
-
-
     }
-
-
-
-
 }

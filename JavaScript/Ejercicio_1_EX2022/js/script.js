@@ -22,10 +22,17 @@ function inicio() {
     let leyendaNaranja = document.createElement("legend");
     leyendaNaranja.textContent = "Naranja";
 
+    contenedorP.appendChild(contenedorTodos);
+    contenedorP.appendChild(contenedorAzul);
+    contenedorP.appendChild(contenedorVerde);
+    contenedorP.appendChild(contenedorRojo);
+    contenedorP.appendChild(contenedorNaranja);
+
     contenedorTodos.appendChild(leyendaTodos);
     contenedorAzul.appendChild(leyendaAzul);
     contenedorVerde.appendChild(leyendaVerde);
     contenedorRojo.appendChild(leyendaRojo);
     contenedorNaranja.appendChild(leyendaNaranja);
+
 
 }

@@ -25,19 +25,29 @@ function inicio() {
         }
     }
 
-    btn2.disabled = true;
+    btn2.onclick = avan2;
     btn1.onclick = avan1;
+
 
     function avan1() {
         var numeroCaja = 0;
-        let contador1 = setInterval(cambioR, 500);
+        let contador1 = setInterval(cambioR, 100);
         function cambioR() {
             componentes[numeroCaja].style.backgroundColor = "red";
+
+            console.log("Entro1");
             if (numeroCaja != 0) {
                 componentes[numeroCaja - 1].style.backgroundColor = "green";
                 numeroCaja++;
+                if (numeroCaja == 40) {
+                    numeroCaja = 0;
+                    console.log(numeroCaja);
+                    componentes[numeroCaja].style.backgroundColor = "green";
+
+                }
             } else {
                 numeroCaja++;
+
             }
         }
     }

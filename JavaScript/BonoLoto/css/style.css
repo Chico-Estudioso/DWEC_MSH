@@ -19,13 +19,14 @@
     flex-wrap: wrap;
     justify-content: center;
     padding: 1.5em;
+    border: 0.5px solid rgba(128, 128, 128, 0.185);
 }
 
 .gallery div {
     margin: 0.5em 0.5em;
     width: 10%;
     text-align: center;
-
+    background-color: greenyellow;
 }
 
 .ponerBorde {
@@ -57,5 +58,6 @@
     margin: 0.5em 0.5em;
     width: 13%;
     text-align: center;
+    background-color: aqua;
 
 }

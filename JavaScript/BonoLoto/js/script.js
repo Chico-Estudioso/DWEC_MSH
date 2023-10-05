@@ -3,6 +3,7 @@ const NUM_COLUMNAS = 3;
 const NUM_CAJAS = 50;
 const CAJAS_SORTEO = 6;
 const componentes = [];
+
 function inicio() {
 
     cuerpo = document.querySelector("body");
@@ -14,9 +15,6 @@ function inicio() {
     btnJugar.textContent = "SORTEO";
     cuerpo.appendChild(btnJugar);
     btnJugar.onclick = jugar;
-
-
-
 
     for (let i = 0; i < NUM_COLUMNAS; i++) {
         let contenedorS = document.createElement("fieldset");
@@ -35,19 +33,18 @@ function inicio() {
             contenedorS.appendChild(contenedorT);
 
             contenedorT.onclick = marcar;
-            componentes.push(contenedorT);
+            let v_numeros = [];
 
             function marcar() {
                 if (contadorClick == 6) {
-                    componentes.forEach(accion);
-
-
                     function accion(item, indice) {
                         if (item.style.backgroundColor == "red") {
 
                         }
                     }
                 } else {
+                    v_numeros.textContent = j;
+                    componentes.forEach(accion);
                     contadorClick++;
                     contenedorT.style.backgroundColor = "red";
                 }
@@ -73,7 +70,7 @@ function jugar() {
         box.textContent = num1;
         contenedorSorteo.appendChild(box);
     }
-    vectorCajas.forEach(recorrido);
+    componentes.forEach(recorrido);
 
     let contAciertos = 0;
 

@@ -1,10 +1,8 @@
 window.onload = inicio;
 
 function inicio() {
-    var buscadora = document.querySelectorAll("img");
     var globalA = document.querySelector("*");
     globalA.style.cssText = "box-sizing: border-box";
-    console.log(buscadora);
 
     let cajaP = document.querySelector(".container");
     cajaP.style.cssText = "border:1px solid black; border - radius: 1rem; margin: 50px auto; padding: 1rem; width: 70 %;";

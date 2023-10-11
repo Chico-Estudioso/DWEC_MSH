@@ -48,7 +48,7 @@ function inicio() {
         item.appendChild(imgS);
     }
 
-    let portifolio = document.querySelector("#galeria > img");
+    let portifolio = document.querySelector("#galeria img");
     portifolio.forEach(mostrarPortfolio);
     function mostrarPortfolio(item, indice) {
         item.src = imagenes[indice];
@@ -60,4 +60,34 @@ function inicio() {
         item.setAttribute("target", "_blank");
         item.href = enlaceDaw[indice];
     }
+
+    let listadoPrecios = document.querySelector("#pricing h3");
+    listadoPrecios.textContent = "Listado de precios";
+    let subtituloP = document.querySelector("#pricing h4");
+    subtituloP.textContent = "Elige tu plan";
+    let cajaPrecio = document.createElement("div");
+    for (let i = 0; i < 3; i++) {
+        cajaPrecio.innerHTML += "<div class='col-sm-4 col-xs-12'> " +
+            "<div class='panel panel-default text-center'>" +
+            "<div class='panel-heading'>" +
+            "<h1>" + NuevoPrecio[i] + "</h1>" +
+            "</div>" +
+            "<div class='panel-body'>" +
+            "<p  > <strong>" + A[i] + "</strong> $</p >" +
+            "<p><strong>" + B[i] + "</strong> $</p>" +
+            "<p><strong>" + C[i] + "</strong> $</p>" +
+            "<p><strong>" + D[i] + "</strong> $</p>" +
+            "<p><strong>Fin</strong> $</p>" +
+            "</div >" +
+            "<div class='panel-footer'>" +
+            "<h3>$19</h3>" +
+            "<h4>Por mes</h4>" +
+            "<button class='btn btn-lg'>Registrarse</button>" +
+            "</div >" +
+            "</div >" +
+            "</div >";
+    }
+    let contenedorPrecios = document.querySelector("#cardPrecios");
+    contenedorPrecios.appendChild(cajaPrecio);
+
 }

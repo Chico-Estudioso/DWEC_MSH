@@ -1,25 +1,23 @@
+* {}
 
-*{
-
-}
-body{
+body {
 
     background-color: rgb(141, 140, 140);
 }
 
 
-.imagenx{
+.imagenx {
     height: 100vh;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    display:table;
+    display: table;
     background-attachment: fixed;
     background-size: cover;
 }
 
 
-h3{
+h3 {
     background-color: #33373a;
     bottom: 0;
     color: white;
@@ -35,57 +33,60 @@ h3{
 
 }
 
-h2{
+h2 {
     text-align: center;
 }
 
-h4{
+h4 {
     text-align: justify;
 }
 
 
 
-.imagen1{
-   
+.imagen1 {
+
     background-image: url("img/yosemite1.jpg");
-    
+
 }
 
-.imagen2{
-   
+.imagen2 {
+
     background-image: url("img/yosemite2.jpg");
-    
+
 
 }
 
-.imagen3{
-   
+.imagen3 {
+
     background-image: url("img/yosemite3.jpg");
-    
+
 
 }
 
-.imagen4{
-   
+.imagen4 {
+
     background-image: url("img/yosemite4.jpg");
-    
+
 
 }
-.imagen5{
-   
+
+.imagen5 {
+
     background-image: url("img/yosemite5.jpg");
-    
+
 
 }
-.imagen6{
-   
+
+.imagen6 {
+
     background-image: url("img/yosemite6.jpg");
-    
+
 
 }
-.imagen9{
-   
+
+.imagen7 {
+
     background-image: url("img/yosemite7.jpg");
-    
+
 
 }

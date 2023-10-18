@@ -2,7 +2,7 @@ let accion = document.getElementById("validar");
 
 let bool = true;
 
-accion.onsubmit = function () {
+accion.onsubmit = function(){
 
     bool = true;
 
@@ -11,13 +11,13 @@ accion.onsubmit = function () {
     let smNum1 = document.getElementById("smNumero1");
 
     let texto1 = document.getElementById("idTexto1").value;
-    let smText1 = document.getElementById("smTexto1");
+    let smTexto1 = document.getElementById("smTexto1");
 
     let n2 = document.getElementById("idNumero2").value;
     let smNum2 = document.getElementById("smNumero2");
 
     let texto2 = document.getElementById("idTexto2").value;
-    let smText2 = document.getElementById("smTexto2");
+    let smTexto2 = document.getElementById("smTexto2");
 
     //Validamos:
     //  1º Que no esté vacío.
@@ -27,93 +27,62 @@ accion.onsubmit = function () {
     //  Si no hay errores se limpia el elemento small.
 
     validacion1(n1, smNum1);
-    validacion2(text1, smText1);
+    validacion2(texto1, smTexto1);
     validacion3(n2, smNum2);
-    validacion4(text2, smText1);
-
-
-
-
-    // let arrayNumeros = [n1, n2, n3, n4, n5, n6];
-    // let arrayComparados = [];
-    // let smDupl = document.getElementById("smDuplicados");
-    // let bool2 = true;
-
-    // for (let i = 0; i < arrayNumeros.length; i++) {
-    //     if (arrayComparados.includes(arrayNumeros[i])) {
-    //         bool2 = false;
-    //     } else {
-    //         arrayComparados.push(arrayNumeros[i]);
-    //     }
-    // }
-
-    // if (bool2) {
-    //     smDupl.innerHTML = "";
-    // } else {
-    //     bool = false;
-    //     smDupl.innerHTML = "** ERROR NÚMEROS DUPLICADOS";
-    // }
+    validacion4(texto2, smTexto2);
 
     return bool;
 
 }
 
-function validaciones(num, sm) {
+function validacion1(num, sm){
 
-    if (num == "") {
+    if(num == ""){
         sm.innerHTML = "* Campo obligatorio.";
         bool = false;
-    } else if (isNaN(num)) {
+    }else if(isNaN(num)){
         sm.innerHTML = "* Introduce un número.";
         bool = false;
-    } else if (!Number.isInteger(Number(num))) {
+    }else if(!Number.isInteger(Number(num))){
         sm.innerHTML = "* Introduce un número entero.";
         bool = false;
-    } else if (num < 1 || num > 50) {
-        sm.innerHTML = "* Número fuera del rango (0-50).";
-        bool = false;
-    } else {
-        sm.innerHTML = "";
-    }
-
-
-}
-
-function validacion1(num, sm) {
-    if (num == "") {
-        sm.innerHTML = "* Campo obligatorio.";
-        bool = false;
-    } else if (isNaN(num)) {
-        sm.innerHTML = "* Introduce un número.";
-        bool = false;
-    } else if (!Number.isInteger(Number(num))) {
-        sm.innerHTML = "* Introduce un número entero.";
-        bool = false;
-    } else if (num < 1 || num > 100) {
+    }else if(num < 1 || num > 100){
         sm.innerHTML = "* Número fuera del rango (0-100).";
         bool = false;
-    } else {
+    }else{
         sm.innerHTML = "";
     }
+
+
 }
 
-function validacion2(txt, sm) {
-    if (num == "") {
+function validacion2(texto, sm){
+    if(texto == ""){
+        sm.innerHTML = "* Campo obligatorio.";
+        bool = false;
+    }
+    let cadena = String(texto);
+    let longitud = cadena.length;
+
+    console.log("Longitud de la cadena" + longitud);
+    if (longitud <= 3 || longitud >= 15) {
+        bool = false;
+        sm.innerHTML="* Texto no valido";
+    }
+
+}
+
+function validacion3(num, sm){
+    if(num == ""){
         sm.innerHTML = "* Campo obligatorio.";
         bool = false;
     }
 }
 
-function validacion3(num, sm) {
-    if (num == "") {
+function validacion4(texto, sm){
+    if(texto == ""){
         sm.innerHTML = "* Campo obligatorio.";
         bool = false;
     }
 }
 
-function validacion4(txt, sm) {
-    if (num == "") {
-        sm.innerHTML = "* Campo obligatorio.";
-        bool = false;
-    }
-}

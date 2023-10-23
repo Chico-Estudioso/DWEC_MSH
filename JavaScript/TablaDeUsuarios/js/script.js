@@ -4,17 +4,17 @@ function inicio() {
     let formulario = document.getElementById("aceptar");
 
     formulario.onsubmit = function () {
-        let pass1 = document.getElementById("password1");
+        let pass1 = document.getElementById("password1").value;
         let smPass1 = document.getElementById("smPassword1");
 
-        let pass2 = document.getElementById("password2");
+        let pass2 = document.getElementById("password2").value;
         let smPass2 = document.getElementById("smPassword2");
 
-        let mail = document.getElementById("email");
+        let mail = document.getElementById("email").value;
         let smMail = document.getElementById("smEmail");
 
         validarPassword(pass1, smPass1);
-        comprobarPassword(pass1, pass2, smPasswd1);
+        comprobarPassword(pass1, pass2, smPass2);
         bool = true;
     };
 }
@@ -40,7 +40,7 @@ function validarPassword(passwd1, smPasswd1) {
             //   }
             //   if (!mayus) {
             //     bool = false;
-            //     smPasswd1.innerHTML = "* La contraseña debe tener una mayúscula";
+            //     smPasswd1.innerHTML = "* La contraseña debe tener una mayúscula";[HTTP/1.1 404 Not Found 0ms]
             //   }
 
             if (

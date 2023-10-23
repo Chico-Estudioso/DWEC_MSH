@@ -14,7 +14,7 @@ function inicio() {
         comprobar(user1, smUser, passwrd1, smPasswrd1);
 
         return bool;
-    }
+    };
 }
 
 function comprobar(us1, smUs1, pas1, smPas1) {

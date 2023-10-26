@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Ejercicio Calificaciones</title>
+    <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -22,15 +22,19 @@
       <div class="row d-flex align-items-center">
         <div class="col-lg-3"></div>
         <div class="col-lg-6">
-          <form action="" method="get" id="accion">
+          <form
+            action="http://moralo.atwebpages.com/dam/insertar.php"
+            method="get"
+            id="accion"
+          >
             <div class="form-group">
-              <label for="expediente">Nº de Expediente</label>
+              <label for="expediente">Nº de expediente</label>
               <input
                 type="text"
                 name="expediente"
                 id="expediente"
                 class="form-control"
-                placeholder="Expediente"
+                placeholder=""
                 aria-describedby="helpId"
               />
               <small id="smExpediente" class="text-muted"></small>
@@ -42,7 +46,7 @@
                 name="nombre"
                 id="nombre"
                 class="form-control"
-                placeholder="Nombre"
+                placeholder=""
                 aria-describedby="helpId"
               />
               <small id="smNombre" class="text-muted"></small>
@@ -54,13 +58,15 @@
                 name="apellidos"
                 id="apellidos"
                 class="form-control"
-                placeholder="apellidos"
+                placeholder=""
                 aria-describedby="helpId"
               />
               <small id="smApellidos" class="text-muted"></small>
             </div>
             <div class="form-group">
-              <label for="dwec">DWEC</label>
+              <label for="dwec"
+                ><b><u>DWEC</u></b></label
+              >
               <input
                 type="number"
                 name="dwec"
@@ -84,16 +90,16 @@
               <small id="smDwes" class="text-muted"></small>
             </div>
             <div class="form-group">
-              <label for="diw">DIW</label>
+              <label for="ds">DS</label>
               <input
                 type="number"
-                name="diw"
-                id="diw"
+                name="ds"
+                id="ds"
                 class="form-control"
                 placeholder=""
                 aria-describedby="helpId"
               />
-              <small id="smDiw" class="text-muted"></small>
+              <small id="smDs" class="text-muted"></small>
             </div>
             <div class="form-group">
               <label for="eie">EIE</label>
@@ -108,25 +114,25 @@
               <small id="smEie" class="text-muted"></small>
             </div>
             <div class="form-group">
-              <label for="ds">DS</label>
+              <label for="diw">DIW</label>
               <input
                 type="number"
-                name="ds"
-                id="ds"
+                name="diw"
+                id="diw"
                 class="form-control"
                 placeholder=""
                 aria-describedby="helpId"
               />
-              <small id="smDs" class="text-muted"></small>
+              <small id="smDiw" class="text-muted"></small>
             </div>
             <button type="submit" name="btnAccion" id="btnAccion">
               Aceptar
             </button>
           </form>
-          <div class="col-lg-3"></div>
         </div>
       </div>
     </div>
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
@@ -144,6 +150,6 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script src="js/script.js"></script>
+    <script src="script4.js"></script>
   </body>
 </html>

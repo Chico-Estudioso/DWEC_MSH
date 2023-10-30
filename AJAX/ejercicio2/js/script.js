@@ -1,7 +1,7 @@
 window.onload = inicio;
 
 function inicio() {
-    let btnMostrar = document.getElementById("mostrar");
+    let btnMostrar = document.getElementById("btn");
     btnMostrar.addEventListener("click", mostrar);
     btnMostrar.onclick = mostrar;
 }
@@ -16,17 +16,15 @@ function mostrar() {
             //he accedido al fichero de datos y está abierto el servidor
             //tengo que averiguar en que formato me llegan los datos para hacer el parseo
             var objeto = JSON.parse(this.responseText);
-            let idFila = document.querySelector("#fila");
-            idFila.innerHTML = "";
-            objeto.forEach(recorrer);
+            let container = document.querySelector(".contenedor");
+            container.innerHTML="";
+            let num1 = Math.floor(Math.random() * 7);
+            let divx = document.createElement('div');
+            divx.className = "col-lg-3";
+            divx.innerHTML = "<video src='" + objeto[num1].url + "' class='card' autoplay loop></video>";
+            container.appendChild(divx);
 
-            function recorrer(item, index) {
-                console.log(item.url);
-                let divx = document.createElement('div');
-                divx.className = "col-lg-3";
-                divx.innerHTML = "<video src='" + item.url + "' width='200' height='100' autoplay loop></video>";
-                idFila.appendChild(divx);
-            }
+
         }
     }
     //PRIMERO SE HACE LA PETICIÓN

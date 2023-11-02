@@ -9,36 +9,30 @@ function inicio() {
             var objeto = JSON.parse(this.responseText);
             let container = document.querySelector("table tbody");
             objeto.forEach(posicionar);
-
             function posicionar(item, indice) {
-                let row = document.createElement("tr");
-                let td_Ciudad = document.createElement("td");
-                let td_Habitantes = document.createElement("td");
-                let td_VIDEO = document.createElement("td");
-                let td_IMAGEN = document.createElement("td");
-                let td_MAPA = document.createElement("td");
-                let td_ID = document.createElement("td");
 
-                td_Ciudad.innerHTML = item.ciudad_nombre;
-                td_Habitantes.innerHTML = item.ciudad_habitantes;
-                td_VIDEO.innerHTML = item.video;
-                td_IMAGEN = item.imagen;
-                td_MAPA = item.mapa;
-                td_ID = item.ciudad_ID;
+                let divx = document.createElement("div");
+                let fotoMenu = document.createElement("img");
+                let nombrePlatos = document.createElement("h4");
+                let ingredientes = document.createElement("p");
+                let precio = document.createElement("p");
 
+                divx.className = "col-lg-4 menu-item";
+                fotoMenu.innerHTML = item.imagen;
+                nombrePlatos.innerHTML = item.nombre;
+                ingredientes.innerHTML = item.ingredientes;
+                precio.innerHTML = item.precio;
 
-                //AppendChild
-                row.appendChild(td_Ciudad);
-                row.appendChild(td_Habitantes);
-                row.appendChild(td_VIDEO);
-                row.appendChild(td_IMAGEN);
-                row.appendChild(td_MAPA);
-                row.appendChild(td_ID);
-                container.appendChild(row);
+                //APPEND CHILD
+                container.appendChild(divx);
+                divx.appendChild(fotoMenu);
+                divx.appendChild(nombrePlatos);
+                divx.appendChild(ingredientes);
+                divx.appendChild(precio);
             }
         }
     }
     //PRIMERO SE HACE LA PETICIÓN
-    xhr.open("GET", 'http://camacho.atwebpages.com/carouselCiudades2/getCiudades.php', true);
+    xhr.open("GET", 'http://moralo.atwebpages.com/restaurante/getPlatos.php', true);
     xhr.send();
 }

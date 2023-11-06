@@ -1,0 +1,51 @@
+[
+    {
+        "id": "1",
+        "nombre": "Macarrones con tomate",
+        "ingredientes": "macarrones, tomate, aceite",
+        "imagen": "http:\/\/moralo.atwebpages.com\/restaurante\/img\/specials-1.jpg",
+        "precio": "4"
+    },
+    {
+        "id": "2",
+        "nombre": "Garbanzos con espinacas",
+        "ingredientes": "garbanzos, espinacas, aceite",
+        "imagen": "http:\/\/moralo.atwebpages.com\/restaurante\/img\/specials-2.jpg",
+        "precio": "5"
+    },
+    {
+        "id": "3",
+        "nombre": "arroz con cardillos",
+        "ingredientes": "arroz, cardillos, aceite",
+        "imagen": "http:\/\/moralo.atwebpages.com\/restaurante\/img\/specials-3.jpg",
+        "precio": "6"
+    },
+    {
+        "id": "4",
+        "nombre": "alubias con boletus",
+        "ingredientes": "alubias, boletus, aceite",
+        "imagen": "http:\/\/moralo.atwebpages.com\/restaurante\/img\/specials-4.jpg",
+        "precio": "7"
+    },
+    {
+        "id": "5",
+        "nombre": "lentejas con calabaza",
+        "ingredientes": "lentejas, calabaza,aceite",
+        "imagen": "http:\/\/moralo.atwebpages.com\/restaurante\/img\/specials-5.jpg",
+        "precio": "5"
+    },
+    {
+        "id": "6",
+        "nombre": "patatas con niscalos",
+        "ingredientes": "patatas, niscalos, aceite",
+        "imagen": "http:\/\/moralo.atwebpages.com\/restaurante\/img\/niscalo.jpg",
+        "precio": "3"
+    },
+    {
+        "id": "7",
+        "nombre": "tortilla patatas",
+        "ingredientes": "huevos, patatas, aceite",
+        "imagen": "http:\/\/moralo.atwebpages.com\/restaurante\/img\/tortilla.jpg",
+        "precio": "5"
+    }
+]

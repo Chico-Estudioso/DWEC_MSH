@@ -19,9 +19,9 @@
   </head>
   <body>
     <div class="container">
-      <div class="row d-block justify-content-center">
-        <h1>Insertar Datos ciudades</h1>
+      <div class="row d-flex justify-content-center">
         <div class="col-lg-6">
+          <h1>Insertar Datos ciudades</h1>
           <form action="#" method="post" id="formulario1" name="form1">
             <!-- BLOQUE -->
             <div class="form-group">
@@ -78,9 +78,17 @@
                 placeholder="Teclea la Superficie de la ciudad"
               />
             </div>
+            <input
+              type="button"
+              name="insertar"
+              class="btn btn-danger"
+              id="btninsertar"
+              value="Insertar"
+            />
           </form>
         </div>
       </div>
+      <div id="mostrar_ciudades"></div>
     </div>
 
     <!-- Optional JavaScript -->

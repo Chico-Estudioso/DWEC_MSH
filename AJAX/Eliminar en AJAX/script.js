@@ -7,7 +7,7 @@ function insertarCiudades() {
     var id = document.getElementById("_id").value;
     $.ajax({
         url: "http://moralo.atwebpages.com/menuAjax/ciudades/EliminarCiudades.php",
-        type: "POST",
+        type: "GET",
         data: {
             id: id,
         }

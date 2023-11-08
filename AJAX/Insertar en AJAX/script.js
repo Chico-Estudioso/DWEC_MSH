@@ -18,7 +18,6 @@ function insertarCiudades(){
             poblacion:poblacion,
             densidad:densidad,
             extension:extension
-
         }
     });
 

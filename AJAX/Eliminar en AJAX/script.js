@@ -34,6 +34,6 @@ function mostrar() {
         }
 
     }
-    xhr.open("POST", "http://moralo.atwebpages.com/menuAjax/ciudades/getCiudades.php")
+    xhr.open("POST", "http://moralo.atwebpages.com/menuAjax/ciudades/clase_Conectar.php")
     xhr.send()
 }

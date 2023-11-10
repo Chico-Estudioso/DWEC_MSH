@@ -20,14 +20,16 @@ function cargarTabla() {
     function cargar() {
         if (this.readyState == 4 && this.status == 200) {
             var objeto = JSON.parse(this.responseText);
-            objeto.foreach(recorrer);
+            objeto.forEach(recorrer);
 
             function recorrer(clientes, index) {
-                bloqueHtml += "<tr> <td>" + clientes.dni + "</td>"
+                let vector = [clientes.dni, clientes.nombre, clientes.apellido, clientes.telefono];
+                bloqueHtml.innerHTML += "<tr> <td>" + clientes.dni + "</td>"
                     + "<td>" + clientes.nombre + "</td>" +
                     + "<td>" + clientes.apellido + "</td>" +
-                    + "<td>" + "<a class='btn btn-danger btn-md' href='javascript:void(0)' onclick=modificar(\"' + clientes.dni + \"')>MODIFICAR</a>" + "</td>" +
-                    + "<td>" + "<a class='btn btn-danger btn-md' href='javascript:void(0)' onclick=eliminar(\"' + clientes.dni + \"')>ELIMINAR<span class='glyphicon glyphicon-trash'></a>" + "</td>" +
+                    + "<td>" + clientes.telefono + "</td>" +
+                    + "<td>" + "<a class='btn btn-info btn-md' href='javascript:void(0)' onclick=modificar(" + vector + ")>MODIFICAR<span class='glyphicon glyphicon-pencil'></a>" + "</td>" +
+                    + "<td>" + "<a class='btn btn-danger btn-md' href='javascript:void(0)' onclick=eliminar(\'" + clientes.dni + "\')>ELIMINAR<span class='glyphicon glyphicon-trash'></a>" + "</td>" +
                     "</tr>";
             }
         }
@@ -41,3 +43,9 @@ function cargarTabla() {
     tabla.appendChild(bloqueHtml);
 }
 function insertarUsuario() { }
+function eliminar(dni) {
+
+}
+function modificar(identificador) {
+
+}

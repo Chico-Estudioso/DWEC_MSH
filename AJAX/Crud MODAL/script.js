@@ -23,7 +23,12 @@ function cargarTabla() {
             objeto.foreach(recorrer);
 
             function recorrer(clientes, index) {
-                bloqueHtml += "<tr> <td><td>" + "</tr>"
+                bloqueHtml += "<tr> <td>" + clientes.dni + "</td>"
+                    + "<td>" + clientes.nombre + "</td>" +
+                    + "<td>" + clientes.apellido + "</td>" +
+                    + "<td>" + "<a class='btn btn-danger btn-md' href='javascript:void(0)' onclick=modificar(\"' + clientes.dni + \"')>MODIFICAR</a>" + "</td>" +
+                    + "<td>" + "<a class='btn btn-danger btn-md' href='javascript:void(0)' onclick=eliminar(\"' + clientes.dni + \"')>ELIMINAR<span class='glyphicon glyphicon-trash'></a>" + "</td>" +
+                    "</tr>";
             }
         }
     }

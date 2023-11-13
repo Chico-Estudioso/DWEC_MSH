@@ -67,6 +67,19 @@ function insertarUsuario() {
     let apellidoTxt = document.querySelector("#txtApellido").value;
     let telefonoTxt = document.querySelector("#txtTelefono").value;
 
+    $.ajax({
+        url: "http://moralo.atwebpages.com/menuAjax/clientes/insertarClientes.php",
+        type: "POST",
+        data: {
+            // EL primer término es la variable php y el segundo la variable JS
+            dni: dniTxt,
+            nombre: nombreTxt,
+            apellido: apellidoTxt,
+            telefono: telefonoTxt
+        },
+        dataType: "JSON"
+    })
+
 }
 function eliminar(dni) {
     console.log("entro en eliminar " + dni);
@@ -74,7 +87,7 @@ function eliminar(dni) {
     //cargamos el método AJAX que ejecuta el servicio eliminar.php
     $.ajax({
         url: "http://moralo.atwebpages.com/menuAjax/clientes/eliminarClientes.php",
-        method: "POST",
+        type: "POST",
         data: {
             dni: dni,
         },

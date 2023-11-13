@@ -3,7 +3,7 @@ var tabla = document.querySelector("#cajaTabla");
 var bloqueHtml = document.createElement("div");
 
 function inicio() {
-    let elemento = document.querySelector("#botonAdd");
+    let elemento = document.querySelector("#btnInsertar");
     elemento.addEventListener("click", insertarUsuario);
 
     cargarTabla();
@@ -62,6 +62,10 @@ function cargarTabla() {
 
 function insertarUsuario() {
     console.log("entro en insertar");
+    let dniTxt = document.querySelector("#txtDni").value;
+    let nombreTxt = document.querySelector("#txtNombre").value;
+    let apellidoTxt = document.querySelector("#txtApellido").value;
+    let telefonoTxt = document.querySelector("#txtTelefono").value;
 
 }
 function eliminar(dni) {

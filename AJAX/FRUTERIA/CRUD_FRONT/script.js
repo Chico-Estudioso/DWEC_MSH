@@ -9,10 +9,66 @@ var total = 0;
 var calculoPrecio = 0;
 let precioTotal = document.getElementById("precio");
 
+let pwd = document.getElementById("idPwd");
+let btnGestionAl = document.getElementById("confirmar");
+let btnPDF = document.getElementById("imprimirPDF");
+let btnEnviarM = document.getElementById("enviarMail");
+btnEnviarM.onclick = enviarMail;
+btnPDF.onclick = mostrarPDF;
+btnGestionAl.onclick = login;
+
 function inicio() {
     cargarContenido();
     console.log(objeto);
 }
+
+function mostrarPDF() {
+    var ticket1 = document.getElementById('cestaCompra').innerHTML;
+    console.log("CONTENIDO TABLA: " + ticket1);
+    var estilo = "<style>" +
+        "table {width: 100%;font: 17px Calibri;}" +
+        "table, th, td {border: solid 1px #DDD; border-collapse: collapse;" +
+        "padding: 2px 3px;text-align: center;}" +
+        "</style>";
+
+    let win = window.open("ticket.pdf", "Fruteria", "height=700,width=700");
+    win.document.write('<html><head>');
+    win.document.write('<title>Ticket</title>'); //cabecera del pdf
+    win.document.write(estilo); // estilo cabecera
+    win.document.write('</head>');
+    win.document.write('<body>');
+    win.document.write("<table>");
+    win.document.write(ticket1);
+    win.document.write("</table>");
+    win.document.write("Total: " + precio.textContent); // contenidos dentro del body
+    win.document.write('</body></html>');
+    win.print();
+
+}
+
+// CONTRASEÑA SCRIPTS: pxvb dpps jqru zzqn 
+
+function enviarMail() {
+    alert("enviar mail");
+    Email.send({
+        Host: "smtp.gmail.com",
+        Username: "mauroserrano01@educarex.es",
+        Password: "pxvbdppsjqruzzqn",
+        To: 'profeaugustobriga@gmail.com',
+        From: 'mauroserrano01@educarex.es',
+        Subject: "Correo Generado con JavaScript de Mauro --> Camacho",
+        Body: "TODO OK!!",
+        // Attachments: [
+        //     {
+        //         name: "ticket.pdf",
+        //         path: pdfBase64
+        //     }]
+    }).then(function () {
+        alert("MAIL ENVIADO OK")
+    });
+}
+
+
 function cargarFrutas() {
     bloqueHtml.className = "row";
     for (let i = 0; i < objeto.length; i++) {
@@ -91,10 +147,16 @@ function anadirCesta(vector) {
 }
 
 function eliminar(fila, calculo) {
+    //Subir de nivel hasta llegar a elmento padre tabla
     let filaTabla = fila.parentNode.parentNode;
-    // console.log("CL 1:Objeto-->" + fila.parentNode.parentNode);
+    //Subir un nivel más para coseguir el elemento tr de esa tabla y pasamos la tabla por parametro
     filaTabla.parentNode.remove(filaTabla);
     total = total - calculo;
     precioTotal.textContent = total;
+}
 
+function login() {
+    if (pwd.value == "frutas") {
+        window.open("../CRUD_BACK/index.html");
+    }
 }

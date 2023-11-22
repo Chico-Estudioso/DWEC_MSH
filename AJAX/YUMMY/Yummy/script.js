@@ -30,7 +30,7 @@ function cajasChefs() {
         bloqueHtml.innerHTML += '<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">' +
             '<div class="chef-member">' +
             '<div class="member-img">' +
-            '<img src="' + objeto[i].imagen + '" class="img-fluid" alt="">' +
+            '<img src="' + objeto[i].imagen + '" class="img-fluid" alt="' + objeto[i].id + '">' +
             '</div>' +
             '<div class="member-info">' +
             '<h4>' + objeto[i].nombre + '</h4>' +

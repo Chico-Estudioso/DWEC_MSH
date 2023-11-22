@@ -23,6 +23,8 @@ function inicio() {
 }
 
 function mostrarPDF() {
+
+    actualizarAlmacen();
     var ticket1 = document.getElementById('cestaCompra').innerHTML;
     console.log("CONTENIDO TABLA: " + ticket1);
     var estilo = "<style>" +
@@ -43,6 +45,10 @@ function mostrarPDF() {
     win.document.write("Total: " + precio.textContent); // contenidos dentro del body
     win.document.write('</body></html>');
     win.print();
+
+}
+
+function actualizarAlmacen() {
 
 }
 
@@ -106,7 +112,7 @@ function cargarContenido() {
     };
     xhr.open(
         "GET",
-        "http://moralo.atwebpages.com/menuAjax/productos/index.php",
+        "http://moralo.atwebpages.com/menuAjax/productos3/getProductos.php",
         true
     );
     xhr.send();
@@ -142,6 +148,16 @@ function anadirCesta(vector) {
             //texto del botón e icono
             "ELIMINAR<i class='bi-trash'></i></a></div> " +
             "</td>";
+
+        $.ajax({
+            url: "http://moralo.atwebpages.com/menuAjax/productos3/actualizarAlmacen.php",
+            type: "POST",
+            data: {
+                id: vector[0],
+                kgs: peso
+            },
+            datatype: "JSON"
+        });
     }
     contenedorCesta.appendChild(cajaTr);
 }

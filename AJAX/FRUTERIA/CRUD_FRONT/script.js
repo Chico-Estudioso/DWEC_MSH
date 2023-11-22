@@ -17,6 +17,8 @@ btnEnviarM.onclick = enviarMail;
 btnPDF.onclick = mostrarPDF;
 btnGestionAl.onclick = login;
 
+let vectorFrutas = [];
+
 function inicio() {
     cargarContenido();
     console.log(objeto);
@@ -49,30 +51,44 @@ function mostrarPDF() {
 }
 
 function actualizarAlmacen() {
+    let infoCliente = prompt("Mi Nombre:");
+    for (let i = 0; i < vectorFrutas.length; i++) {
+        let nombreFruta = vectorFrutas[1];
+        $.ajax({
+            url: "http://moralo.atwebpages.com/menuAjax/productos3/insertarFacturacion.php",
+            type: "POST",
+            data: {
+                precioTotal: precioTotal,
+                name: nombreFruta,
+                info: infoCliente
+            },
+            datatype: "JSON"
+        });
 
+    }
 }
 
 // CONTRASEÑA SCRIPTS: pxvb dpps jqru zzqn 
 
-function enviarMail() {
-    alert("enviar mail");
-    Email.send({
-        Host: "smtp.gmail.com",
-        Username: "mauroserrano01@educarex.es",
-        Password: "pxvbdppsjqruzzqn",
-        To: 'profeaugustobriga@gmail.com',
-        From: 'mauroserrano01@educarex.es',
-        Subject: "Correo Generado con JavaScript de Mauro --> Camacho",
-        Body: "TODO OK!!",
-        // Attachments: [
-        //     {
-        //         name: "ticket.pdf",
-        //         path: pdfBase64
-        //     }]
-    }).then(function () {
-        alert("MAIL ENVIADO OK")
-    });
-}
+// function enviarMail() {
+//     alert("enviar mail");
+//     Email.send({
+//         Host: "smtp.gmail.com",
+//         Username: "mauroserrano01@educarex.es",
+//         Password: "pxvbdppsjqruzzqn",
+//         To: 'profeaugustobriga@gmail.com',
+//         From: 'mauroserrano01@educarex.es',
+//         Subject: "Correo Generado con JavaScript de Mauro --> Camacho",
+//         Body: "TODO OK!!",
+//         // Attachments: [
+//         //     {
+//         //         name: "ticket.pdf",
+//         //         path: pdfBase64
+//         //     }]
+//     }).then(function () {
+//         alert("MAIL ENVIADO OK")
+//     });
+// }
 
 
 function cargarFrutas() {
@@ -123,6 +139,7 @@ function anadirCesta(vector) {
     let vectorX = vector.split(",");
     let peso = prompt("Teclea los kgs de " + vectorX[1]);
     calculoPrecio = peso * parseFloat(vectorX[3]);
+    vectorFrutas.push(vectorX[1]);
 
     total = total + calculoPrecio;
     precioTotal.textContent = total;
@@ -142,8 +159,8 @@ function anadirCesta(vector) {
             "<div class='col-lg-2 text-center mb-2'><a class='btn btn-danger btn-md'" +
             //anulo el href, no hay link , pero sí hay evento onclick con
             //parámetro incluido: dni de esa tupla
-            " href='javascript:void(0)' onclick=eliminar(this,'" +
-            calculoPrecio +
+            " href='javascript:void(0)' onclick=eliminar(this,'" + vectorX[0] +
+            calculoPrecio + peso +
             "')>" +
             //texto del botón e icono
             "ELIMINAR<i class='bi-trash'></i></a></div> " +
@@ -162,13 +179,23 @@ function anadirCesta(vector) {
     contenedorCesta.appendChild(cajaTr);
 }
 
-function eliminar(fila, calculo) {
+function eliminar(fila, id, calculo, peso) {
     //Subir de nivel hasta llegar a elmento padre tabla
     let filaTabla = fila.parentNode.parentNode;
     //Subir un nivel más para coseguir el elemento tr de esa tabla y pasamos la tabla por parametro
     filaTabla.parentNode.remove(filaTabla);
-    total = total - calculo;
+    total = total - parseFloat(calculo);
     precioTotal.textContent = total;
+
+    $.ajax({
+        url: "http://moralo.atwebpages.com/menuAjax/productos3/retornarAlmacen.php",
+        type: "POST",
+        data: {
+            id: id,
+            kgs: peso
+        },
+        datatype: "JSON"
+    });
 }
 
 function login() {

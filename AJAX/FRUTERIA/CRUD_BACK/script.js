@@ -125,7 +125,7 @@ function modificar(vector) {
     document.querySelector("#txtNombre").value = deserializar[1];
     document.querySelector("#txtPrecio").value = deserializar[2];
     document.querySelector("#urlFoto").value = deserializar[3];
-    console.log("id :" + deserializar[0]);
+    console.log("id: " + deserializar[0]);
     document.querySelector("#btnInsertar").disabled = true;
 
     document.querySelector("#btnModificar").disabled = false;

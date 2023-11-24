@@ -14,7 +14,7 @@ function cargarContenido() {
     };
     xhr.open(
         "GET",
-        "http://camacho.atwebpages.com/carouselCiudades2/getCiudades.php",
+        "http://camacho.atwebpages.com/carouselitemes2/getitemes.php",
         true
     );
     xhr.send();
@@ -29,22 +29,32 @@ function cargarCarrousel() {
     function posicionarContenidos(item, index) {
         let elemento = document.createElement("li");
         elemento.setAttribute("data-target", "#myCarousel");
-        elemento.setAttribute("data-slide-to", posicion);
-        if (posicion == 0) {
+        elemento.setAttribute("data-slide-to", index);
+
+        if (index == 0) {
             elemento.className = "active";
         }
+
         lista.appendChild(elemento);
 
         let caja = document.createElement("div");
-
-        if (posicion == 0) {
+        if (index == 0) {
             caja.className = "item active";
         } else {
             caja.className = "item";
         }
 
-        caja.innerHTML=item.video
+        let video = document.createElement("div");
+        video.innerHTML = item.video;
 
+        let nombre = document.createElement("h1");
+        nombre.textContent = item.item_nombre;
+        let img = document.createElement("img");
+        img.setAttribute("src", item.imagen);
+        img.style = "width:100%;height:50vh;";
+        caja.appendChild(video);
+        caja.appendChild(nombre);
+        caja.appendChild(img);
         contenedor.appendChild(caja);
     }
 }

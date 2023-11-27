@@ -58,7 +58,6 @@ function cargarRepresentantes() {
     console.log(objeto);
     objeto.forEach(comprobarRepresentantes);
 
-
     function comprobarRepresentantes(item, index) {
         console.log(item.Representantes);
         let votosPA = parseInt(item.votosPA);

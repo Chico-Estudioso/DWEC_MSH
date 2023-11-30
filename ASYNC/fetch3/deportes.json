@@ -1,0 +1,197 @@
+{
+    "deportes": [
+      {
+        "id": 1, 
+        "name": "Football"
+    },
+      {
+        "id": 2, 
+        "name": "Basketball"
+    },
+      {
+        "id": 3, 
+        "name": "Baseball"
+    },
+      {
+        "id": 4, 
+        "name": "Soccer"
+    },
+      {
+        "id": 5, 
+        "name": "Tennis"
+    },
+      {
+        "id": 6, 
+        "name": "Golf"
+    },
+      {
+        "id": 7, 
+        "name": "Swimming"
+    },
+      {
+        "id": 8, 
+        "name": "Running"
+    },
+      {
+        "id": 9, 
+        "name": "Cycling"
+    },
+      {
+        "id": 10, 
+        "name": "Volleyball"
+    },
+      {
+        "id": 11, 
+        "name": "Hockey"
+    },
+      {
+        "id": 12, 
+        "name": "Cricket"
+    },
+      {
+        "id": 13, 
+        "name": "Rugby"
+    },
+      {
+        "id": 14, 
+        "name": "Badminton"
+    },
+      {
+        "id": 15, 
+        "name": "Table Tennis"
+    },
+      {
+        "id": 16, 
+        "name": "Boxing"
+    },
+      {
+        "id": 17,
+        "name": "Martial Arts"
+    },
+      {
+        "id": 18, 
+        "name": "Skiing"
+    },
+      {
+        "id": 19, 
+        "name": "Snowboarding"
+    },
+      {
+        "id": 20, 
+        "name": "Ice Skating"
+    },
+      {
+        "id": 21, 
+        "name": "Surfing"
+    },
+      {
+        "id": 22, 
+        "name": "Skateboarding"
+    },
+      {
+        "id": 23, 
+        "name": "Gymnastics"
+    },
+      {
+        "id": 24, 
+        "name": "Diving"
+    },
+      {
+        "id": 25, 
+        "name": "Rowing"
+    },
+      {
+        "id": 26, 
+        "name": "Sailing"
+    },
+      {
+        "id": 27, 
+        "name": "Wrestling"
+    },
+      {
+        "id": 28, 
+        "name": "Weightlifting"
+    },
+      {
+        "id": 29, 
+        "name": "Archery"
+    },
+      {
+        "id": 30, 
+        "name": "Climbing"
+    },
+      {
+        "id": 31, 
+        "name": "Fencing"
+    },
+      {
+        "id": 32, 
+        "name": "Horse Racing"
+    },
+      {
+        "id": 33, 
+        "name": "Track and Field"
+    },
+      {
+        "id": 34, 
+        "name": "Triathlon"
+    },
+      {
+        "id": 35, 
+        "name": "Softball"
+    },
+      {
+        "id": 36, 
+        "name": "Curling"
+    },
+      {
+        "id": 37, 
+        "name": "Handball"
+    },
+      {
+        "id": 38, 
+        "name": "Polo"
+    },
+      {
+        "id": 39, 
+        "name": "Ultimate Frisbee"
+    },
+      {
+        "id": 40, 
+        "name": "Bobsleigh"
+    },
+      {
+        "id": 41, 
+        "name": "Luge"
+    },
+      {
+        "id": 42, 
+        "name": "Biathlon"
+    },
+      {
+        "id": 43, 
+        "name": "Equestrian"
+    },
+      {
+        "id": 44, 
+        "name": "Paddleboarding"
+    },
+      {
+        "id": 45, 
+        "name": "Canoeing"
+    },
+      {
+        "id": 46, 
+        "name": "Snorkeling"
+    },
+      {
+        "id": 47, 
+        "name": "Water Polo"
+    },
+      {
+        "id": 48, 
+        "name": "Bowling"
+    }
+    ]
+  }
+  

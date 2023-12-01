@@ -2,6 +2,8 @@ window.onload = inicio;
 function inicio() {
     obtenerPaises();
     obtenerDeportes();
+    let btnCargar = document.getElementById("obtener");
+    btnCargar.onclick = obtenerEquipos;
     // obtenerEquipos();
 }
 async function obtenerPaises() {
@@ -35,12 +37,13 @@ async function obtenerDeportes() {
     console.log("entro en obtenerDeportes");
     const url = "deportes.json";
     var headers = {};
-    const response = await fetch(url, {
-        method: "GET",
-        mode: 'cors',
-        headers: headers
-    });
     try {
+        const response = await fetch(url, {
+            method: "GET",
+            mode: 'cors',
+            headers: headers
+        });
+
 
 
         const data = await response.json();
@@ -85,6 +88,6 @@ async function obtenerEquipos() {
      </div>
     `
     } catch (error) {
-        alert(error);
+        error = alert("No hay ningun equipo de este pais en este deporte seleccionado");
     }
 }
